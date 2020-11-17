@@ -9,14 +9,13 @@
 
 <style>
     body {
-        background: linear-gradient(#fed7e2, #fff5f5);
+        /*background: linear-gradient(#fed7e2, #fff5f5);*/
         background-repeat: no-repeat;
         height: 100vh;
         width: fit-content;
         min-width: 1000px;
         padding: 0;
         margin: 0;
-        background: url(../img/aditya-chinchure-hyN9aU9Tm-c-unsplash.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -27,6 +26,7 @@
         width: 4.1rem;
         height: auto;
         display: inline-block;
+        z-index: 200;
     }
     
     .card img {
@@ -42,6 +42,10 @@
     .cardInputBox {
         width: fit-content;
         display: flex;
+        z-index: 100;
+        padding: 5px;
+        border: 1px solid black;
+        background: rgba(255, 255, 255, 0.6);
     }
     
     .cardInput {
@@ -60,7 +64,7 @@
         background-color: rgba(255, 160, 160, 0.95);
     }
     
-    .droppable {
+    .cardInput input {
         height: .7rem;
         width: .7rem;
         background-color: transparent;
@@ -69,10 +73,13 @@
     }
 </style>
 
-<body>
+<body style="background: url({{url_for('static', filename='img/aditya-chinchure-hyN9aU9Tm-c-unsplash.jpg')}}) no-repeat center center fixed">
     <!--<div style="height: 100vh; width:100%; background-color:rgba(32, 32, 32, 0.473);margin:0;padding:0;position:fixed;top:0;left:0;z-index:2"></div>-->
     <!--이미지 출처 http://acbl.mybigcommerce.com/52-playing-cards/ -->
-    <div style="display: flex; justify-content: space-between">
+    <div style="width:100%; height:100vh; position: fixed; display:flex; justify-content:center; align-items:center;">
+        <img style="width:1050px; height:auto" src="{{url_for('static', filename='img/bg_board.png')}}" alt="bg_board">
+    </div>
+    <div style="display: flex; justify-content: space-between;">
         <div class="card-container" style="
           height: 100vh;
           margin: 0;
@@ -98,60 +105,60 @@
             </div>
 
             <div class="cards" style="margin-top: 6px">
-                <div class="card"><img src="../img/cards/AS.jpg" alt="AS" /></div>
-                <div class="card"><img src="../img/cards/2S.jpg" alt="2S" /></div>
-                <div class="card"><img src="../img/cards/3S.jpg" alt="3S" /></div>
-                <div class="card"><img src="../img/cards/4S.jpg" alt="4S" /></div>
-                <div class="card"><img src="../img/cards/5S.jpg" alt="5S" /></div>
-                <div class="card"><img src="../img/cards/6S.jpg" alt="6S" /></div>
-                <div class="card"><img src="../img/cards/7S.jpg" alt="7S" /></div>
-                <div class="card"><img src="../img/cards/8S.jpg" alt="8S" /></div>
-                <div class="card"><img src="../img/cards/9S.jpg" alt="9S" /></div>
-                <div class="card"><img src="../img/cards/JS.jpg" alt="JS" /></div>
-                <div class="card"><img src="../img/cards/QS.jpg" alt="QS" /></div>
-                <div class="card"><img src="../img/cards/KS.jpg" alt="KS" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/AS.jpg')}}" alt="AS" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/2S.jpg')}}" alt="2S" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/3S.jpg')}}" alt="3S" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/4S.jpg')}}" alt="4S" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/5S.jpg')}}" alt="5S" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/6S.jpg')}}" alt="6S" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/7S.jpg')}}" alt="7S" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/8S.jpg')}}" alt="8S" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/9S.jpg')}}" alt="9S" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/JS.jpg')}}" alt="JS" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/QS.jpg')}}" alt="QS" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/KS.jpg')}}" alt="KS" /></div>
             </div>
             <div class="cards">
-                <div class="card"><img src="../img/cards/AH.jpg" alt="AH" /></div>
-                <div class="card"><img src="../img/cards/2H.jpg" alt="2H" /></div>
-                <div class="card"><img src="../img/cards/3H.jpg" alt="3H" /></div>
-                <div class="card"><img src="../img/cards/4H.jpg" alt="4H" /></div>
-                <div class="card"><img src="../img/cards/5H.jpg" alt="5H" /></div>
-                <div class="card"><img src="../img/cards/6H.jpg" alt="6H" /></div>
-                <div class="card"><img src="../img/cards/7H.jpg" alt="7H" /></div>
-                <div class="card"><img src="../img/cards/8H.jpg" alt="8H" /></div>
-                <div class="card"><img src="../img/cards/9H.jpg" alt="9H" /></div>
-                <div class="card"><img src="../img/cards/JH.jpg" alt="JH" /></div>
-                <div class="card"><img src="../img/cards/QH.jpg" alt="QH" /></div>
-                <div class="card"><img src="../img/cards/KH.jpg" alt="KH" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/AH.jpg')}}" alt="AH" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/2H.jpg')}}" alt="2H" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/3H.jpg')}}" alt="3H" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/4H.jpg')}}" alt="4H" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/5H.jpg')}}" alt="5H" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/6H.jpg')}}" alt="6H" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/7H.jpg')}}" alt="7H" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/8H.jpg')}}" alt="8H" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/9H.jpg')}}" alt="9H" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/JH.jpg')}}" alt="JH" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/QH.jpg')}}" alt="QH" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/KH.jpg')}}" alt="KH" /></div>
             </div>
             <div class="cards">
-                <div class="card"><img src="../img/cards/AD.jpg" alt="AD" /></div>
-                <div class="card"><img src="../img/cards/2D.jpg" alt="2D" /></div>
-                <div class="card"><img src="../img/cards/3D.jpg" alt="3D" /></div>
-                <div class="card"><img src="../img/cards/4D.jpg" alt="4D" /></div>
-                <div class="card"><img src="../img/cards/5D.jpg" alt="5D" /></div>
-                <div class="card"><img src="../img/cards/6D.jpg" alt="6D" /></div>
-                <div class="card"><img src="../img/cards/7D.jpg" alt="7D" /></div>
-                <div class="card"><img src="../img/cards/8D.jpg" alt="8D" /></div>
-                <div class="card"><img src="../img/cards/9D.jpg" alt="9D" /></div>
-                <div class="card"><img src="../img/cards/JD.jpg" alt="JD" /></div>
-                <div class="card"><img src="../img/cards/QD.jpg" alt="QD" /></div>
-                <div class="card"><img src="../img/cards/KD.jpg" alt="KD" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/AD.jpg')}}" alt="AD" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/2D.jpg')}}" alt="2D" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/3D.jpg')}}" alt="3D" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/4D.jpg')}}" alt="4D" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/5D.jpg')}}" alt="5D" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/6D.jpg')}}" alt="6D" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/7D.jpg')}}" alt="7D" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/8D.jpg')}}" alt="8D" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/9D.jpg')}}" alt="9D" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/JD.jpg')}}" alt="JD" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/QD.jpg')}}" alt="QD" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/KD.jpg')}}" alt="KD" /></div>
             </div>
             <div class="cards" style="margin-bottom: 6px">
-                <div class="card"><img src="../img/cards/AC.jpg" alt="AC" /></div>
-                <div class="card"><img src="../img/cards/2C.jpg" alt="2C" /></div>
-                <div class="card"><img src="../img/cards/3C.jpg" alt="3C" /></div>
-                <div class="card"><img src="../img/cards/4C.jpg" alt="4C" /></div>
-                <div class="card"><img src="../img/cards/5C.jpg" alt="5C" /></div>
-                <div class="card"><img src="../img/cards/6C.jpg" alt="6C" /></div>
-                <div class="card"><img src="../img/cards/7C.jpg" alt="7C" /></div>
-                <div class="card"><img src="../img/cards/8C.jpg" alt="8C" /></div>
-                <div class="card"><img src="../img/cards/9C.jpg" alt="9C" /></div>
-                <div class="card"><img src="../img/cards/JC.jpg" alt="JC" /></div>
-                <div class="card"><img src="../img/cards/QC.jpg" alt="QC" /></div>
-                <div class="card"><img src="../img/cards/KC.jpg" alt="KC" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/AC.jpg')}}" alt="AC" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/2C.jpg')}}" alt="2C" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/3C.jpg')}}" alt="3C" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/4C.jpg')}}" alt="4C" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/5C.jpg')}}" alt="5C" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/6C.jpg')}}" alt="6C" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/7C.jpg')}}" alt="7C" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/8C.jpg')}}" alt="8C" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/9C.jpg')}}" alt="9C" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/JC.jpg')}}" alt="JC" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/QC.jpg')}}" alt="QC" /></div>
+                <div class="card"><img src="{{url_for('static', filename='img/cards/KC.jpg')}}" alt="KC" /></div>
             </div>
             <div style="display: flex; justify-content: space-between; width: 830px">
                 <div class="cardInputBox">
@@ -175,7 +182,6 @@
         $(function() {
             $(".card").draggable({
                 revert: "invalid",
-                greedy: "true"
             });
             $(".droppable").droppable({
                 drop: function(event, ui) {
@@ -190,6 +196,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>
