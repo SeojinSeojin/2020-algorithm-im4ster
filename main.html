@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Im4ster</title>
+</head>
+
+<style>
+    body {
+        /*background: linear-gradient(#fed7e2, #fff5f5);*/
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: fit-content;
+        min-width: 1000px;
+        padding: 0;
+        margin: 0;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    
+    .card {
+        width: 4.1rem;
+        height: auto;
+        display: inline-block;
+        z-index: 200;
+    }
+    
+    .card img {
+        width: 100%;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .card img:hover {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    }
+    
+    .cardInputBox {
+        width: fit-content;
+        display: flex;
+        z-index: 100;
+        padding: 5px;
+        border: 1px solid black;
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+    }
+    
+    .cardInput {
+        width: 4.13rem;
+        height: 6.2rem;
+        margin: 2px;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: inset 0 2px 12px 5px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .cardInput-noInput {
+        background-color: transparent;
+        box-shadow: none;
+    }
+    
+    .cardInput input {
+        height: .7rem;
+        width: .7rem;
+        background-color: transparent;
+        border: none;
+        color: transparent;
+    }
+</style>
+
+<body style="background-color:rgb(119, 32, 32)">
+    <!--<div style="height: 100vh; width:100%; background-color:rgba(32, 32, 32, 0.473);margin:0;padding:0;position:fixed;top:0;left:0;z-index:2"></div>-->
+    <!--이미지 출처 http://acbl.mybigcommerce.com/52-playing-cards/ -->
+    <div style="width:100%; height:100vh; position: fixed; display:flex; justify-content:center; align-items:center;">
+        <img style="width:1050px; height:auto" src="static/img/bg_board.png" alt="bg_board">
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+        <div class="card-container" style="
+          height: 100vh;
+          margin: 0;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        ">
+            <div style="display: flex; justify-content: space-between; width: 1200px">
+                <div class="cardInputBox">
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput cardInput-noInput"><img src="static/img/cards/back.jpg" alt=""></div>
+                    <div class="cardInput cardInput-noInput"><img src="static/img/cards/back.jpg" alt=""></div>
+                    <div class="cardInput cardInput-noInput"><img src="static/img/cards/back.jpg" alt=""></div>
+                </div>
+                <div class="cardInputBox">
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput cardInput-noInput"><img src="static/img/cards/back.jpg" alt=""></div>
+                    <div class="cardInput cardInput-noInput"><img src="static/img/cards/back.jpg" alt=""></div>
+                    <div class="cardInput cardInput-noInput"><img src="static/img/cards/back.jpg" alt=""></div>
+                </div>
+            </div>
+
+            <div class="cards" style="margin-top: 6px">
+                <div class="card"><img src="static/img/cards/AS.jpg" alt="AS" /></div>
+                <div class="card"><img src="static/img/cards/2S.jpg" alt="2S" /></div>
+                <div class="card"><img src="static/img/cards/3S.jpg" alt="3S" /></div>
+                <div class="card"><img src="static/img/cards/4S.jpg" alt="4S" /></div>
+                <div class="card"><img src="static/img/cards/5S.jpg" alt="5S" /></div>
+                <div class="card"><img src="static/img/cards/6S.jpg" alt="6S" /></div>
+                <div class="card"><img src="static/img/cards/7S.jpg" alt="7S" /></div>
+                <div class="card"><img src="static/img/cards/8S.jpg" alt="8S" /></div>
+                <div class="card"><img src="static/img/cards/9S.jpg" alt="9S" /></div>
+                <div class="card"><img src="static/img/cards/JS.jpg" alt="JS" /></div>
+                <div class="card"><img src="static/img/cards/QS.jpg" alt="QS" /></div>
+                <div class="card"><img src="static/img/cards/KS.jpg" alt="KS" /></div>
+            </div>
+            <div class="cards">
+                <div class="card"><img src="static/img/cards/AH.jpg" alt="AH" /></div>
+                <div class="card"><img src="static/img/cards/2H.jpg" alt="2H" /></div>
+                <div class="card"><img src="static/img/cards/3H.jpg" alt="3H" /></div>
+                <div class="card"><img src="static/img/cards/4H.jpg" alt="4H" /></div>
+                <div class="card"><img src="static/img/cards/5H.jpg" alt="5H" /></div>
+                <div class="card"><img src="static/img/cards/6H.jpg" alt="6H" /></div>
+                <div class="card"><img src="static/img/cards/7H.jpg" alt="7H" /></div>
+                <div class="card"><img src="static/img/cards/8H.jpg" alt="8H" /></div>
+                <div class="card"><img src="static/img/cards/9H.jpg" alt="9H" /></div>
+                <div class="card"><img src="static/img/cards/JH.jpg" alt="JH" /></div>
+                <div class="card"><img src="static/img/cards/QH.jpg" alt="QH" /></div>
+                <div class="card"><img src="static/img/cards/KH.jpg" alt="KH" /></div>
+            </div>
+            <div class="cards">
+                <div class="card"><img src="static/img/cards/AD.jpg" alt="AD" /></div>
+                <div class="card"><img src="static/img/cards/2D.jpg" alt="2D" /></div>
+                <div class="card"><img src="static/img/cards/3D.jpg" alt="3D" /></div>
+                <div class="card"><img src="static/img/cards/4D.jpg" alt="4D" /></div>
+                <div class="card"><img src="static/img/cards/5D.jpg" alt="5D" /></div>
+                <div class="card"><img src="static/img/cards/6D.jpg" alt="6D" /></div>
+                <div class="card"><img src="static/img/cards/7D.jpg" alt="7D" /></div>
+                <div class="card"><img src="static/img/cards/8D.jpg" alt="8D" /></div>
+                <div class="card"><img src="static/img/cards/9D.jpg" alt="9D" /></div>
+                <div class="card"><img src="static/img/cards/JD.jpg" alt="JD" /></div>
+                <div class="card"><img src="static/img/cards/QD.jpg" alt="QD" /></div>
+                <div class="card"><img src="static/img/cards/KD.jpg" alt="KD" /></div>
+            </div>
+            <div class="cards" style="margin-bottom: 6px">
+                <div class="card"><img src="static/img/cards/AC.jpg" alt="AC" /></div>
+                <div class="card"><img src="static/img/cards/2C.jpg" alt="2C" /></div>
+                <div class="card"><img src="static/img/cards/3C.jpg" alt="3C" /></div>
+                <div class="card"><img src="static/img/cards/4C.jpg" alt="4C" /></div>
+                <div class="card"><img src="static/img/cards/5C.jpg" alt="5C" /></div>
+                <div class="card"><img src="static/img/cards/6C.jpg" alt="6C" /></div>
+                <div class="card"><img src="static/img/cards/7C.jpg" alt="7C" /></div>
+                <div class="card"><img src="static/img/cards/8C.jpg" alt="8C" /></div>
+                <div class="card"><img src="static/img/cards/9C.jpg" alt="9C" /></div>
+                <div class="card"><img src="static/img/cards/JC.jpg" alt="JC" /></div>
+                <div class="card"><img src="static/img/cards/QC.jpg" alt="QC" /></div>
+                <div class="card"><img src="static/img/cards/KC.jpg" alt="KC" /></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; width: 1200px">
+                <div class="cardInputBox">
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput cardInput-noInput"><img src="static/img/cards/back.jpg" alt=""></div>
+                    <div class="cardInput cardInput-noInput"><img src="static/img/cards/back.jpg" alt=""></div>
+                    <div class="cardInput cardInput-noInput"><img src="static/img/cards/back.jpg" alt=""></div>
+                </div>
+                <div class="cardInputBox">
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput"><input class="droppable" type="text" value=" "></div>
+                    <div class="cardInput cardTrash"><input class="droppable" type="text" value=" "></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+    <script>
+        $(function() {
+            $(".card").draggable({
+                revert: "invalid",
+            });
+            $(".droppable").droppable({
+                drop: function(event, ui) {
+                    if ($(this)[0].value != " ") {
+                        // 다시 revert 되도록 하는 특별한 조치
+                        return false
+                    }
+                    const ipcard = ui.draggable[0].firstChild.alt;
+                    $(`input[value = ${ipcard}]`).attr("value", " ");
+                    $(this).attr("value", ipcard);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
