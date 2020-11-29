@@ -1,0 +1,68 @@
+body {
+    /*background: linear-gradient(#fed7e2, #fff5f5);*/
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-width: 1000px;
+    padding: 0;
+    margin: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.card {
+    width: 4.1rem;
+    height: auto;
+    display: inline-block;
+    z-index: 200;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card img:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.cardInputBox {
+    width: fit-content;
+    display: flex;
+    z-index: 100;
+    padding: 5px;
+    border: 1px solid black;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+}
+
+.cardInput {
+    width: 4.13rem;
+    height: 6.2rem;
+    margin: 2px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: inset 0 2px 12px 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardInput-noInput {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.cardInput-noInput img {
+    width: 100%;
+}
+
+.cardInput input {
+    height: .7rem;
+    width: .7rem;
+    background-color: transparent;
+    border: none;
+    color: transparent;
+}
