@@ -11,6 +11,14 @@ body {
     background-size: cover;
 }
 
+.btn-grad {
+    position: absolute;
+    bottom: 10rem;
+    right: 2rem;
+    border-radius: 40%;
+    height: 2rem;
+}
+
 .card {
     width: 4.1rem;
     height: auto;
