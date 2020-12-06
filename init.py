@@ -19,8 +19,8 @@ def post():
         return redirect("/")
     else:
         vp = get_victory_percentage(result)
-        return render_template("result.html", vp=vp)
+        return render_template("result.html", vp=vp, cl=result)
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
