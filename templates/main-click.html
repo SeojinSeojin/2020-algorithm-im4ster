@@ -46,7 +46,16 @@
             background-color: rgba(255, 255, 255, 0.1);
             box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.6), -3px -3px 5px 0 rgba(255, 255, 255, 0.3);
         }
+        
+        .cardInput input {
+            position: fixed;
+        }
+        
+        .cardInput img {
+            border-radius: 0.4rem;
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body style="background-color: rgb(75, 11, 11)">
@@ -66,16 +75,16 @@
                 <div style="display: flex; justify-content: space-between; width: 1200px">
                     <div class="cardInputBox">
                         <div class="cardInput">
-                            <input name="p11" class="droppable" type="text" value=" " />
+                            <input name="p11" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p12" class="droppable" type="text" value=" " />
+                            <input name="p12" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p13" class="droppable" type="text" value=" " />
+                            <input name="p13" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p14" class="droppable" type="text" value=" " />
+                            <input name="p14" type="text" value=" " />
                         </div>
                         <div class="cardInput cardInput-noInput">
                             <img src="{{url_for('static', filename='img/cards/back.jpg')}}" alt="" />
@@ -89,16 +98,16 @@
                     </div>
                     <div class="cardInputBox">
                         <div class="cardInput">
-                            <input name="p21" class="droppable" type="text" value=" " />
+                            <input name="p21" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p22" class="droppable" type="text" value=" " />
+                            <input name="p22" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p23" class="droppable" type="text" value=" " />
+                            <input name="p23" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p24" class="droppable" type="text" value=" " />
+                            <input name="p24" type="text" value=" " />
                         </div>
                         <div class="cardInput cardInput-noInput">
                             <img src="{{url_for('static', filename='img/cards/back.jpg')}}" alt="" />
@@ -175,16 +184,16 @@
                 <div style="display: flex; justify-content: space-between; width: 1200px">
                     <div class="cardInputBox">
                         <div class="cardInput">
-                            <input name="p31" class="droppable" type="text" value=" " />
+                            <input name="p31" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p32" class="droppable" type="text" value=" " />
+                            <input name="p32" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p33" class="droppable" type="text" value=" " />
+                            <input name="p33" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p34" class="droppable" type="text" value=" " />
+                            <input name="p34" type="text" value=" " />
                         </div>
                         <div class="cardInput cardInput-noInput">
                             <img src="{{url_for('static', filename='img/cards/back.jpg')}}" alt="" />
@@ -198,31 +207,53 @@
                     </div>
                     <div class="cardInputBox">
                         <div class="cardInput">
-                            <input name="p41" class="droppable" type="text" value=" " />
+                            <input name="p41" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p42" class="droppable" type="text" value=" " />
+                            <input name="p42" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p43" class="droppable" type="text" value=" " />
+                            <input name="p43" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p44" class="droppable" type="text" value=" " />
+                            <input name="p44" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p45" class="droppable" type="text" value=" " />
+                            <input name="p45" type="text" value=" " />
                         </div>
                         <div class="cardInput">
-                            <input name="p46" class="droppable" type="text" value=" " />
+                            <input name="p46" type="text" value=" " />
                         </div>
                         <div class="cardInput cardTrash">
-                            <input name="p47" class="droppable" type="text" value=" " />
+                            <input name="p47" type="text" value=" " />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script>
+        let i = 0;
+        const inputDirection = ["p41", "p11", "p21", "p31", "p42", "p12", "p22", "p32", "p43", "p13", "p23", "p33", "p44", "p14", "p24", "p34", "p45", "p46", "p47"]
+        const cards = document.querySelectorAll(".card");
+        const dbcEvent = (c) => {
+            const chosenCard = c.childNodes[0];
+            const chosenCardNum = chosenCard.alt;
+            const targetInput = document.querySelector(`input[name=${inputDirection[i]}]`);
+            $(`input[name=${inputDirection[i]}]`).attr("value", chosenCardNum);
+            const targetInputDiv = targetInput.parentNode;
+            chosenCard.classList.toggle("animate__animated");
+            chosenCard.classList.toggle("animate__flipInX");
+            targetInputDiv.appendChild(chosenCard);
+            i += 1;
+        }
+        cards.forEach((c) => {
+            c.addEventListener("click", (event) => {
+                dbcEvent(c)
+            });
+        })
+    </script>
 </body>
 
 </html>
