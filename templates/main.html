@@ -7,30 +7,29 @@
     <title>Im4ster</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <style>
-        .btn-grad {
-            background-image: linear-gradient(to right, #912d2d 0%, #470c47 51%, #912d2d 100%)
-        }
-        
-        .btn-grad {
-            text-align: center;
-            transition: 0.5s;
-            background-size: 200% auto;
+        .btn-start {
+            position: absolute;
+            border-radius: 1rem;
+            font-size: 1.3rem;
+            bottom: 4.4rem;
+            height: 3rem;
+            width: 12%;
+            left: 44%;
+            background: linear-gradient(-45deg, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15));
+            background-color: rgb(38, 134, 86);
+            box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.5), -4px -4px 5px 0 rgba(255, 255, 255, 0.5);
             border: none;
-            font-size: 1rem;
-            margin: 1rem;
-            padding-left: 1.2rem;
-            padding-right: 1.2rem;
-            color: white;
-            box-shadow: 0 0 2rem rgba(236, 227, 227, 0.5);
-            border-radius: 50%;
-            display: block;
+            cursor: pointer;
+            transition: .4s;
         }
         
-        .btn-grad:hover {
-            background-position: right center;
-            /* change the direction of the change here */
-            color: #fff;
-            text-decoration: none;
+        .btn-start:hover {
+            background-color: rgb(41, 150, 95);
+        }
+        
+        .btn-start:active {
+            border: none;
+            box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.5), -2px -2px 3px 0 rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
@@ -42,7 +41,7 @@
         <img style="width:1050px; height:auto" src="{{url_for('static', filename='img/bg_board.png')}}" alt="bg_board">
     </div>
     <form action="/postCard" method="POST">
-        <input type="submit" class="btn-grad" value="Start">
+        <input type="submit" class="btn-start" value="Start">
         <div style="display: flex; justify-content: space-between; align-items:center">
             <div style="height: 100vh; margin: 0; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
                 <div style="display: flex; justify-content: space-between; width: 1200px">

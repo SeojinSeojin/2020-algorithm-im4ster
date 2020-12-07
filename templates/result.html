@@ -6,95 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Im4ster</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loader.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         .cardInput img {
             width: 100%;
         }
         
-        .loader {
-            color: #ffffff;
-            font-size: 90px;
-            text-indent: -9999em;
-            overflow: hidden;
-            width: 1em;
-            height: 1em;
-            border-radius: 50%;
-            margin: 72px auto;
-            z-index: 100;
-            -webkit-transform: translateZ(0);
-            -ms-transform: translateZ(0);
-            transform: translateZ(0);
-            -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
-            animation: load6 1.7s infinite ease, round 1.7s infinite ease;
-        }
-        
-        @-webkit-keyframes load6 {
-            0% {
-                box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-            }
-            5%,
-            95% {
-                box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-            }
-            10%,
-            59% {
-                box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
-            }
-            20% {
-                box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
-            }
-            38% {
-                box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
-            }
-            100% {
-                box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-            }
-        }
-        
-        @keyframes load6 {
-            0% {
-                box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-            }
-            5%,
-            95% {
-                box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-            }
-            10%,
-            59% {
-                box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
-            }
-            20% {
-                box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
-            }
-            38% {
-                box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
-            }
-            100% {
-                box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-            }
-        }
-        
-        @-webkit-keyframes round {
-            0% {
-                -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-            }
-            100% {
-                -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
-            }
-        }
-        
-        @keyframes round {
-            0% {
-                -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-            }
-            100% {
-                -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
-            }
+        .btn-retry {
+            box-shadow: 8px 8px 12px 0 rgba(10, 0, 0, 0.25), -6px -6px 9px 0 rgba(226, 252, 216, 0.4);
+            cursor: pointer;
+            border-radius: 1rem;
+            font-size: 1.3rem;
+            color: rgb(220, 235, 222);
+            height: 3rem;
+            position: fixed;
+            z-index: 300;
+            bottom: 32vh;
+            width: 18%;
+            left: 41%;
+            border: none;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.20));
         }
     </style>
 </head>
@@ -128,11 +60,9 @@
                     <div class="cardInput cardInput-noInput"><img src="{{url_for('static', filename='img/cards/back.jpg')}}" alt=""></div>
                 </div>
             </div>
-            <div style="height: 25rem; z-index:200; display:flex; align-items:center; font-size:3.5rem; visibility:hidden">
-                <div id="vp" style="color:white">
-                    승률은 {{vp}}%입니다.
-                </div>
+            <div id="containvp" style="height: 25rem; z-index:200; display:flex; align-items:center; flex-direction:column; justify-content:center; font-size:3.5rem;">
             </div>
+            <div id="realvp" style="display: hidden;">{{vp}}</div>
             <div style="display: flex; justify-content: space-between; width: 1200px">
                 <div class="cardInputBox">
                     {% for i in range(8,12) %}
@@ -153,12 +83,32 @@
 
     <script>
         const spinner = document.querySelector(".spinner");
-        const vp = document.querySelector("#vp");
+        const containvp = document.querySelector("#containvp");
+        const realvp = document.querySelector("#realvp");
+        const vp = realvp.innerText;
         window.addEventListener('DOMContentLoaded', (event) => {
             setTimeout(() => {
                 spinner.style.visibility = "hidden";
-                vp.style.visibility = "visible";
-            }, 2000);
+                containvp.style.visibility = "visible";
+                const a = `
+                <div id="vp" style="color:white; z-index:100; font-family: 'Noto Sans KR', sans-serif; transition:0.4s;" class="animate__animated animate__zoomInDown">
+                    이번 게임에서 이길 확률은 ${vp}%입니다.
+                </div>
+                `
+                const b = `
+                <button class="btn-retry animate__animated animate__fadeInUp" onclick="location.href='/'">
+                    다시 도전하기
+                </button>
+                `
+                const aa = document.createElement("div");
+                aa.innerHTML = a;
+                const bb = document.createElement("div");
+                bb.innerHTML = b;
+                containvp.appendChild(aa);
+                setTimeout(() => {
+                    document.body.appendChild(bb);
+                }, 1000)
+            }, 2500);
         });
     </script>
 </body>

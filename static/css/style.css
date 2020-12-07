@@ -1,3 +1,4 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 body {
     /*background: linear-gradient(#fed7e2, #fff5f5);*/
     background-repeat: no-repeat;
@@ -9,14 +10,6 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
-
-.btn-grad {
-    position: absolute;
-    bottom: 10rem;
-    right: 2rem;
-    border-radius: 40%;
-    height: 2rem;
 }
 
 .card {
@@ -73,4 +66,45 @@ body {
     background-color: transparent;
     border: none;
     color: transparent;
+}
+
+.btn-start {
+    position: absolute;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    bottom: 4.4rem;
+    height: 3rem;
+    width: 12%;
+    left: 44%;
+    background: linear-gradient(-45deg, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15));
+    background-color: rgb(36, 128, 82);
+    box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.5), -4px -4px 5px 0 rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.btn-start:active {
+    border: none;
+    box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.5), -2px -2px 3px 0 rgba(255, 255, 255, 0.5);
+}
+
+.cardInput img {
+    width: 100%;
+}
+
+.btn-retry {
+    box-shadow: 8px 8px 12px 0 rgba(10, 0, 0, 0.25), -6px -6px 9px 0 rgba(226, 252, 216, 0.4);
+    cursor: pointer;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    color: rgb(220, 235, 222);
+    height: 3rem;
+    position: fixed;
+    z-index: 300;
+    bottom: 32vh;
+    width: 18%;
+    left: 41%;
+    border: none;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.20));
 }
