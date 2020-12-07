@@ -8,6 +8,11 @@ def home():
     return render_template("main.html")
 
 
+@app.route("/click")
+def clickMode():
+    return render_template("main-click.html")
+
+
 @app.route("/postCard", methods=['POST'])
 def post():
     result = []
