@@ -15,18 +15,11 @@ for itr in lines:
     cnt += 1
 f.close()
 
-#print(level)
-
 def get_level(cards):  # cards는 set
     cards = list(cards)
     cards.sort()
     ret = level[tuple(cards)]
     return ret
-
-
-#s = ["AS", "XS", "JS", "QS", "KS"]
-#print(get_level(s))
-
 
 class player():
     playerNum = 0
@@ -37,13 +30,11 @@ class player():
         for c in cards:
             leftCards.remove(c)
 
-
 def ncr(n, r):
     r = min(r, n-r)
     numer = reduce(op.mul, range(n, n-r, -1), 1)
     denom = reduce(op.mul, range(1, r+1), 1)
     return numer / denom
-
 
 def get_best_level(cards):
     ans = 3000000
@@ -53,11 +44,9 @@ def get_best_level(cards):
         ans = min(ans, get_level(i))  # 마지막 원소는 항상 포함
     return ans
 
-
 def f(p, N):
     global res, leftCards
     global my_level
-    print(p[1],p[2],N)
     if len(p[N].cards) > 4:  # 같은 플레이어 카드끼리는 순서 없음
         new_leftCards = leftCards[leftCards.index(p[N].cards[-1]):]
     else:
@@ -103,7 +92,6 @@ def win_prob(p):
     return 1 - (res/(ncr(37, 3)*ncr(34, 3)))
 
 
-
 def set_leftCards():
     global leftCards
     leftCards = ["AS", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "XS", "JS", "QS", "KS",  # 남은카드들
@@ -120,7 +108,6 @@ def get_victory_percentage(cards):
     p.append(player(cards[8:]))  # 나
     p.append(player(cards[:4]))  # p1
     p.append(player(cards[4:8]))  # p2
-    print(leftCards)
     my_level = 3000000
     for i in combinations(p[0].cards, 5):
         my_level = min(my_level, get_level(i))
