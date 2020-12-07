@@ -65,15 +65,7 @@
             <div id="realvp" style="display: hidden;">{{vp}}</div>
             <div style="display: flex; justify-content: space-between; width: 1200px">
                 <div class="cardInputBox">
-                    {% for i in range(8,12) %}
-                    <div class="cardInput"><img src="{{url_for('static', filename='img/cards/'+cl[i]+'.jpg')}}" alt="{{cl[i]}}"></div>
-                    {% endfor %}
-                    <div class="cardInput cardInput-noInput"><img src="{{url_for('static', filename='img/cards/back.jpg')}}" alt=""></div>
-                    <div class="cardInput cardInput-noInput"><img src="{{url_for('static', filename='img/cards/back.jpg')}}" alt=""></div>
-                    <div class="cardInput cardInput-noInput"><img src="{{url_for('static', filename='img/cards/back.jpg')}}" alt=""></div>
-                </div>
-                <div class="cardInputBox">
-                    {% for i in range(12,19) %}
+                    {% for i in range(8,15) %}
                     <div class="cardInput"><img src="{{url_for('static', filename='img/cards/'+cl[i]+'.jpg')}}" alt="{{cl[i]}}"></div>
                     {% endfor %}
                 </div>

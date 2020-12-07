@@ -7,6 +7,10 @@
     <title>Im4ster</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
     <style>
+        .btn-start {
+            left: 58%;
+        }
+        
         .cards {
             z-index: 500;
         }
@@ -184,29 +188,6 @@
                 <div style="display: flex; justify-content: space-between; width: 1200px">
                     <div class="cardInputBox">
                         <div class="cardInput">
-                            <input name="p31" type="text" value=" " />
-                        </div>
-                        <div class="cardInput">
-                            <input name="p32" type="text" value=" " />
-                        </div>
-                        <div class="cardInput">
-                            <input name="p33" type="text" value=" " />
-                        </div>
-                        <div class="cardInput">
-                            <input name="p34" type="text" value=" " />
-                        </div>
-                        <div class="cardInput cardInput-noInput">
-                            <img src="{{url_for('static', filename='img/cards/back.jpg')}}" alt="" />
-                        </div>
-                        <div class="cardInput cardInput-noInput">
-                            <img src="{{url_for('static', filename='img/cards/back.jpg')}}" alt="" />
-                        </div>
-                        <div class="cardInput cardInput-noInput">
-                            <img src="{{url_for('static', filename='img/cards/back.jpg')}}" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardInputBox">
-                        <div class="cardInput">
                             <input name="p41" type="text" value=" " />
                         </div>
                         <div class="cardInput">
@@ -235,7 +216,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script>
         let i = 0;
-        const inputDirection = ["p41", "p11", "p21", "p31", "p42", "p12", "p22", "p32", "p43", "p13", "p23", "p33", "p44", "p14", "p24", "p34", "p45", "p46", "p47"]
+        const inputDirection = ["p41", "p11", "p21", "p42", "p12", "p22", "p43", "p13", "p23", "p44", "p14", "p24", "p45", "p46", "p47"]
         const cards = document.querySelectorAll(".card");
         const dbcEvent = (c) => {
             const chosenCard = c.childNodes[0];
