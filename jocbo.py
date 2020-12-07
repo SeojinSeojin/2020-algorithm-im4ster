@@ -1,0 +1,278 @@
+import time
+
+MAX = 2598960
+level = dict()
+pass_cnt = 0
+
+def init_poker():
+  global pass_cnt
+  shape = ["S", "D", "H", "C"]
+  number = ["A", "K", "Q", "J", "X", "9", "8", "7", "6", "5", "4", "3", "2", "A"] #마지막 A는 스트레이트 용
+  shape_pair = [["S", "D"], ["S", "H"], ["S", "C"], ["D", "H"], ["D", "C"], ["H", "C"]]
+
+  card = ["NULL", "NULL", "NULL", "NULL", "NULL"]
+
+  cnt = 0
+  for i in range(4): #Royal Straight Flush
+    for j in range(5):
+      card[j] = number[j] + shape[i]
+    s = {card[0], card[1], card[2], card[3], card[4]}
+    sl = list(s)
+    sl.sort()
+    sl = tuple(sl)
+    if sl in level:
+      pass_cnt = pass_cnt + 1
+    else:
+      level[sl] = cnt
+    cnt = cnt + 1
+  
+  for i in range(9): #Straight Flush
+    for j in range(4):
+      for k in range(5):
+        card[k] = number[i+1+k] + shape[j]
+      s = {card[0], card[1], card[2], card[3], card[4]}
+      sl = list(s)
+      sl.sort()
+      sl = tuple(sl)
+      if sl in level:
+        pass_cnt = pass_cnt + 1
+      else:
+        level[sl] = cnt
+      cnt = cnt + 1
+  
+  for i in range(13): #four of a kind
+    for j in range(4): #4장
+      card[j] = number[i] + shape[j]
+    for j in range(13): #1장
+      if i == j:
+        continue
+      for k in range(4):
+        card[4] = number[j] + shape[k]
+        s = {card[0], card[1], card[2], card[3], card[4]}
+        sl = list(s)
+        sl.sort()
+        sl = tuple(sl)
+        if sl in level:
+          pass_cnt = pass_cnt + 1
+        else:
+          level[sl] = cnt
+        cnt = cnt + 1
+  
+  for i in range(13): #full house
+    for j in range(4):
+      n = 0
+      for k in range(4):
+        if j == k:
+          continue
+        card[n] = number[i] + shape[k]
+        n = n+1
+      for p in range(13):
+        if i == p:
+          continue
+        for q in range(6):
+          card[3] = number[p] + shape_pair[q][0]
+          card[4] = number[p] + shape_pair[q][1]
+          s = {card[0], card[1], card[2], card[3], card[4]}
+          #print(number[i])
+          #print(s)
+          sl = list(s)
+          sl.sort()
+          sl = tuple(sl)
+          if sl in level:
+            pass_cnt = pass_cnt + 1
+          else:
+            level[sl] = cnt
+          cnt = cnt + 1
+
+  for i in range(9): #flush
+    card_number = ["NULL", "NULL", "NULL", "NULL", "NULL"]
+    card_number[0] = number[i]
+    for j in range(i+1, 10):
+      card_number[1] = number[j]
+      for k in range(j+1, 11):
+        card_number[2] = number[k]
+        for p in range(k+1, 12):
+          card_number[3] = number[p]
+          for q in range(p+1, 13):
+            card_number[4] = number[q]
+            for r in range(4):
+              for o in range(5):
+                card[o] = card_number[o] + shape[r]
+              s = {card[0], card[1], card[2], card[3], card[4]}
+              sl = list(s)
+              sl.sort()
+              sl = tuple(sl)
+              if sl in level:
+                pass_cnt = pass_cnt + 1
+              else:
+                level[sl] = cnt
+              cnt = cnt + 1
+
+  for i in range(10): #straight
+    for j in range(4):
+      for k in range(4):
+        for p in range(4):
+          for q in range(4):
+            for o in range(4):
+              card[0] = number[i] + shape[j]
+              card[1] = number[i+1] + shape[k]
+              card[2] = number[i+2] + shape[p]
+              card[3] = number[i+3] + shape[q]
+              card[4] = number[i+4] + shape[o]
+              s = {card[0], card[1], card[2], card[3], card[4]}
+              sl = list(s)
+              sl.sort()
+              sl = tuple(sl)
+              if sl in level:
+                pass_cnt = pass_cnt + 1
+              else:
+                level[sl] = cnt
+              cnt = cnt + 1
+  
+  for i in range(13): #triple
+    for j in range(4):
+      n = 0
+      for k in range(4):
+        if j == k:
+          continue
+        card[n] = number[i] + shape[k]
+        n = n+1
+      for p in range(13):
+        for q in range(13):
+          for r in range(4):
+            for o in range(4):
+              card[3] = number[p] + shape[r]
+              card[4] = number[q] + shape[o]
+              s = {card[0], card[1], card[2], card[3], card[4]}
+              sl = list(s)
+              sl.sort()
+              sl = tuple(sl)
+              if sl in level:
+                pass_cnt = pass_cnt + 1
+              else:
+                level[sl] = cnt
+              cnt = cnt + 1
+
+  for i in range(13): #two-pair
+    for j in range(6):
+      card[0] = number[i] + shape_pair[j][0]
+      card[1] = number[i] + shape_pair[j][1]
+      for k in range(13):
+        if i == k:
+          continue
+        for p in range(6):
+          card[2] = number[k] + shape_pair[p][0]
+          card[3] = number[k] + shape_pair[p][1]
+          for q in range(13):
+            if q == i:
+              continue
+            if q == k:
+              continue
+            for o in range(4):
+              card[4] = number[q] + shape[o]
+              s = {card[0], card[1], card[2], card[3], card[4]}
+              sl = list(s)
+              sl.sort()
+              sl = tuple(sl)
+              if sl in level:
+                pass_cnt = pass_cnt + 1
+              else:
+                level[sl] = cnt
+              cnt = cnt + 1
+
+  for i in range(13): #one-pair
+    for j in range(6):
+      card[0] = number[i] + shape_pair[j][0]
+      card[1] = number[i] + shape_pair[j][1]
+      for k in range(13):
+        if i == k:
+          continue
+        for p in range(13):
+          if p == i or p == i:
+            continue
+          for q in range(13):
+            if q == i or q == k or q == p:
+              continue
+            for kk in range(4):
+              card[2] = number[k] + shape[kk]
+              for pp in range(4):
+                card[3] = number[p] + shape[pp]
+                for qq in range(4):
+                  card[4] = number[q] + shape[qq]
+                  s = {card[0], card[1], card[2], card[3], card[4]}
+                  sl = list(s)
+                  sl.sort()
+                  sl = tuple(sl)
+                  if sl in level:
+                    pass_cnt = pass_cnt + 1
+                  else:
+                    level[sl] = cnt
+                  cnt = cnt + 1
+
+  for i in range(13): #no-pair
+    for j in range(13):
+      if i == j:
+        continue
+      for k in range(13):
+        if k == i or k == j:
+          continue
+        for p in range(13):
+          if p == i or p == j or p == k:
+            continue
+          for q in range(13):
+            if q == i or q == j or q == k or q == p:
+              continue
+            for ii in range(4):
+              card[0] = number[i] + shape[ii]
+              for jj in range(4):
+                card[1] = number[j] + shape[jj]
+                for kk in range(4):
+                  card[2] = number[k] + shape[kk]
+                  for pp in range(4):
+                    card[3] = number[p] + shape[pp]
+                    for qq in range(4):
+                      card[4] = number[q] + shape[qq]
+                      s = {card[0], card[1], card[2], card[3], card[4]}
+                      sl = list(s)
+                      sl.sort()
+                      sl = tuple(sl)
+                      if sl in level:
+                        pass_cnt = pass_cnt + 1
+                      else:
+                        level[sl] = cnt
+                      cnt = cnt + 1
+
+def get_level(l):
+  global level
+  lv = l.sort()
+  lv = tuple(l)
+  ret = level[lv]
+  return ret
+
+start = time.time()
+init_poker()
+f = open("./write.txt", 'w')
+print("INIT DONE")
+print(time.time() - start)
+for i in level:
+  #print(i, ":", level[i])
+  f.write(str(i)+"\n")
+f.close()
+#print(level[0])
+#print(pass_cnt)
+crd = ["XS", "JS", "QS", "KS", "AS"]
+print(get_level(crd))
+crd = ["AS", "3H", "5C", "6S", "7S"]
+print(get_level(crd))
+
+'''
+level[cnt] = s
+
+sl = list(s)
+sl.sort()
+sl = tuple(sl)
+if sl in level:
+  print("PASS")
+else:
+  level[sl] = cnt
+'''
