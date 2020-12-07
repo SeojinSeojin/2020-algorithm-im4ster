@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from backtrack_victory import get_victory_percentage
+import time
 app = Flask(__name__)
 
 
@@ -23,7 +24,11 @@ def post():
     if " " in result:
         return redirect("/")
     else:
-        vp = get_victory_percentage(result)
+        start=time.time()
+        #result=['9H', '9S', '5S', '5H', '8C', '7S', '8H', '8D', '3H', '3D', '3S', 'AS', '7D', 'QS', 'JD']
+        vp = float("%.2f"%(get_victory_percentage(result)*100))
+        print(vp)
+        print(time.time()-start)
         return render_template("result.html", vp=vp, cl=result)
 
 
