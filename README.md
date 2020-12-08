@@ -20,8 +20,13 @@
 
 ## Requirements
 코드 다운로드
+
     git clone https://github.com/SeojinSeojin/2020-algorithm-im4ster
+    
 flask 다운로드
+
     pip install flask
+    
 - 이후 init.py를 실행하고 로컬 서버에 접속(pypy 환경에서 코드 실행 권장)
+    * pypy에서 init.py를 실행하기 위해서는, pypy에 pip을 설치한 후 그 안에서 flask를 설치해줘야 한다.
 - write.txt가 다운로드되지 않았을 경우, jokbo.py를 실행하여 write.txt 생성(이 또한 pypy환경에서 실행 권장)
