@@ -4,6 +4,9 @@
 ## Service Description
 세븐 포커 게임의 승률을 계산하는 프로그램
 
+## Service ProtoType
+![image](https://user-images.githubusercontent.com/48249505/107023666-4b674780-67ea-11eb-8480-0f1dd0270dd8.png)![image](https://user-images.githubusercontent.com/48249505/107024067-dfd1aa00-67ea-11eb-9f16-382a26534dd8.png)
+
 ## Developers
 
 |                                          심규현                                        |                                          장미                                          |
